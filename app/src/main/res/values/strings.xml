@@ -9,7 +9,7 @@
     <string name="begin_game_prompt_instructions">Enter a code below to join an existing game, or start your own game and invite a friend!</string>
     <string name="begin_game_prompt_code_prompt_hint">Enter your friend\'s game code…</string>
 
-    <string name="shape_selection_rock">Rock</string>
-    <string name="shape_selection_paper">Paper</string>
-    <string name="shape_selection_scissors">Scissors</string>
+    <string name="shape_rock">Rock</string>
+    <string name="shape_paper">Paper</string>
+    <string name="shape_scissors">Scissors</string>
 </resources>

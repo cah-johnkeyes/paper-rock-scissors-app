@@ -13,16 +13,22 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/shape_selection_rock"/>
+        android:onClick="onShapeSelected"
+        android:tag="@string/shape_rock"
+        android:text="@string/shape_rock"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/shape_selection_paper"/>
+        android:onClick="onShapeSelected"
+        android:tag="@string/shape_paper"
+        android:text="@string/shape_paper"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/shape_selection_scissors"/>
+        android:onClick="onShapeSelected"
+        android:tag="@string/shape_scissors"
+        android:text="@string/shape_scissors"/>
 
 </LinearLayout>
