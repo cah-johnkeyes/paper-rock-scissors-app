@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">RockPaperScissors</string>
+    <string name="app_name">Rock Paper Scissors</string>
+
+    <string name="username_prompt_instructions">Please enter a username below</string>
+    <string name="username_prompt_username_prompt_hint">Username...</string>
+
     <string name="begin_game_prompt_create_game_btn">Create new game</string>
     <string name="begin_game_prompt_join_game_btn">Join friend\'s game</string>
     <string name="begin_game_prompt_instructions">Enter a code below to join an existing game, or start your own game and invite a friend!</string>

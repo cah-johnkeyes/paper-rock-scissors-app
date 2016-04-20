@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-public class BeginGamePrompt extends AppCompatActivity {
+public class BeginGamePromptActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +14,7 @@ public class BeginGamePrompt extends AppCompatActivity {
     }
 
     public void onJoinGame(View view) {
-        EditText gameCodeEditText = (EditText) findViewById(R.id.begin_game_prompt_game_code_input);
+        EditText gameCodeEditText = (EditText) findViewById(R.id.begin_game_prompt_game_code_edit_text);
         String gameCode = gameCodeEditText.getText().toString();
 
         // TODO: join game using game code
