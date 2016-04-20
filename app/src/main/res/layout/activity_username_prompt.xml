@@ -28,7 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignBottom="@id/username_prompt_edit_text"
-            android:src="@android:drawable/ic_menu_send" />
+            android:src="@android:drawable/ic_menu_send"
+            android:onClick="onSubmitUsername"/>
     </RelativeLayout>
 
     <TextView
