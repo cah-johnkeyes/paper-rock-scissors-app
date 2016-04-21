@@ -5,7 +5,7 @@
     <string name="username_prompt_username_prompt_hint">Username...</string>
 
     <string name="begin_game_prompt_create_game_btn">Create new game</string>
-    <string name="begin_game_prompt_join_game_btn">Join friend\'s game</string>
+    <string name="begin_game_prompt_join_game_btn">Join existing game</string>
     <string name="begin_game_prompt_instructions">Enter a code below to join an existing game, or start your own game and invite a friend!</string>
     <string name="begin_game_prompt_code_prompt_hint">Enter your friend\'s game code…</string>
 
