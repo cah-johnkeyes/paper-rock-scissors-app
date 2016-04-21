@@ -1,5 +1,6 @@
 package com.fuse.bootcamp.rockpaperscissors;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,9 +19,16 @@ public class BeginGamePromptActivity extends AppCompatActivity {
         String gameCode = gameCodeEditText.getText().toString();
 
         // TODO: join game using game code
+        startGame();
     }
 
     public void onCreateGame(View view) {
         // TODO: create game and display game code
+        startGame();
+    }
+
+    private void startGame() {
+        Intent intent = new Intent(this, ShapeSelectionActivity.class);
+        startActivity(intent);
     }
 }
