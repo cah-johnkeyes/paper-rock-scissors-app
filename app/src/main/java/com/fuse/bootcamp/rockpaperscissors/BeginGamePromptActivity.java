@@ -5,12 +5,22 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BeginGamePromptActivity extends AppCompatActivity {
+
+    private GameService gameService;
+    private Game game = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        gameService = GameServiceProvider.get();
         setContentView(R.layout.activity_begin_game_prompt);
     }
 
@@ -23,8 +33,30 @@ public class BeginGamePromptActivity extends AppCompatActivity {
     }
 
     public void onCreateGame(View view) {
-        // TODO: create game and display game code
-        startGame();
+        gameService.createGame().enqueue(new Callback<Game>() {
+            @Override
+            public void onResponse(Call<Game> call, Response<Game> response) {
+                game = response.body();
+                displayGameId(game.getId());
+            }
+
+            @Override
+            public void onFailure(Call<Game> call, Throwable t) {
+                Toast.makeText(BeginGamePromptActivity.this, "Failed to create game. Try again.", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void displayGameId(final int gameId) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                TextView gameIdTextView = (TextView) findViewById(R.id.begin_game_prompt_game_id_txt);
+                if (gameIdTextView != null) {
+                    gameIdTextView.setText(String.valueOf(gameId));
+                }
+            }
+        });
     }
 
     private void startGame() {
