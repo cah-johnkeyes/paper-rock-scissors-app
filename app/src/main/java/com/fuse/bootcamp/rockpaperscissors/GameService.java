@@ -10,6 +10,9 @@ public interface GameService {
     @POST("/player")
     Call<Player> submitPlayer(@Body Player player);
 
+    @POST("/game")
+    Call<Game> createGame();
+
     @POST("/game/{gameId}/player/{username}")
     Call<Void> joinGame(@Path("gameId") String gameId, @Path("username") String username);
 
