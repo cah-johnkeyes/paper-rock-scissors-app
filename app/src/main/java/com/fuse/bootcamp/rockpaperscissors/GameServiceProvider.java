@@ -14,7 +14,7 @@ public class GameServiceProvider {
         httpClient.addInterceptor(logging);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://54.186.48.44:8080")
+                .baseUrl("http://message-game-engine.cfapps.io")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient.build())
                 .build();

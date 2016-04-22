@@ -3,13 +3,10 @@ package com.fuse.bootcamp.rockpaperscissors;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.IOException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
