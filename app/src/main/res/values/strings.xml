@@ -9,6 +9,13 @@
     <string name="begin_game_prompt_instructions">Enter a code below to join an existing game, or start your own game and invite a friend!</string>
     <string name="begin_game_prompt_code_prompt_hint">Enter a game ID…</string>
 
+    <string name="game_result_player_move_header">You chose:</string>
+    <string name="game_result_opponent_move_header_format">%1$s chose:</string>
+    <string name="game_result_opponent_move_default_text">…</string>
+    <string name="game_result_win_message">You Won!</string>
+    <string name="game_result_lose_message">You Lost!</string>
+    <string name="game_result_tie_message">You Tied!</string>
+
     <string name="shape_rock">Rock</string>
     <string name="shape_paper">Paper</string>
     <string name="shape_scissors">Scissors</string>

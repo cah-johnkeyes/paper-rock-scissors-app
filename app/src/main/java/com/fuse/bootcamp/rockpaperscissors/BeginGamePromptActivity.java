@@ -20,6 +20,7 @@ public class BeginGamePromptActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         gameService = GameServiceProvider.get();
+        registerUsername();
         setContentView(R.layout.activity_begin_game_prompt);
     }
 
@@ -71,8 +72,20 @@ public class BeginGamePromptActivity extends AppCompatActivity {
                 if (gameIdTextView != null) {
                     gameIdTextView.setText(String.valueOf(gameId));
                 }
+            }
+        });
+    }
 
-                // TODO: auto fill game id input
+    private void registerUsername() {
+        gameService.submitPlayer(GameSession.player).enqueue(new Callback<Player>() {
+            @Override
+            public void onResponse(Call<Player> call, Response<Player> response) {
+                // yay!
+            }
+
+            @Override
+            public void onFailure(Call<Player> call, Throwable t) {
+                Toast.makeText(BeginGamePromptActivity.this, "Could not register username. Try reloading the app", Toast.LENGTH_SHORT).show();
             }
         });
     }

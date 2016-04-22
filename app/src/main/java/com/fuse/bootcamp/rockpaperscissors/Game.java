@@ -26,4 +26,17 @@ public class Game {
     public void setId(int id) {
         this.id = id;
     }
+
+    public String getOpponentUsername() {
+        String playerUsername = GameSession.player.getUsername();
+        String opponentUsername = "Opponent";
+        for(Player p : players) {
+            if (!playerUsername.equals(p.getUsername())) {
+                opponentUsername = p.getUsername();
+                break;
+            }
+        }
+
+        return opponentUsername;
+    }
 }

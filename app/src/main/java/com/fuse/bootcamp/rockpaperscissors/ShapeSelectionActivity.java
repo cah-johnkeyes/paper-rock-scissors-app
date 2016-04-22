@@ -26,7 +26,7 @@ public class ShapeSelectionActivity extends AppCompatActivity {
         String paperTag = getString(R.string.shape_paper);
 
         String shapeSelection = view.getTag().toString();
-        Shape shape;
+        final Shape shape;
 
         if (rockTag.equals(shapeSelection)) {
             shape = Shape.ROCK;
@@ -41,6 +41,7 @@ public class ShapeSelectionActivity extends AppCompatActivity {
         gameService.sendMessage(gameId, username, shape.toString()).enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
+                GameSession.playerMove = shape;
                 showResultsScreen();
             }
 
