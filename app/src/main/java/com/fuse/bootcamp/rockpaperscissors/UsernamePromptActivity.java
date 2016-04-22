@@ -28,6 +28,7 @@ public class UsernamePromptActivity extends AppCompatActivity {
         String username = sharedPrefs.getString(USERNAME_SHARED_PREFS_KEY, "");
 
         if (!username.isEmpty()) {
+            GameSession.player = new Player(username, "token");
             promptToStartOrJoinGame();
         } else {
             setContentView(R.layout.activity_username_prompt);
@@ -39,7 +40,7 @@ public class UsernamePromptActivity extends AppCompatActivity {
         final String username = usernameEditText.getText().toString();
 
         if (!username.isEmpty()) {
-            Player player = new Player(username, "token");
+            final Player player = new Player(username, "token");
             gameService.submitPlayer(player).enqueue(new Callback<Player>() {
                 @Override
                 public void onResponse(Call<Player> call, Response<Player> response) {
@@ -47,6 +48,7 @@ public class UsernamePromptActivity extends AppCompatActivity {
                     editor.putString(USERNAME_SHARED_PREFS_KEY, username);
                     editor.apply();
 
+                    GameSession.player = player;
                     promptToStartOrJoinGame();
                 }
 

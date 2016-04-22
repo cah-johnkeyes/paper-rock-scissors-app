@@ -14,8 +14,8 @@ public interface GameService {
     Call<Game> createGame();
 
     @POST("/game/{gameId}/player/{username}")
-    Call<Void> joinGame(@Path("gameId") String gameId, @Path("username") String username);
+    Call<Game> joinGame(@Path("gameId") String gameId, @Path("username") String username);
 
     @POST("/game/{gameId}/player/{username}/message")
-    Call<Void> sendMessage(@Path("gameId") String gameId, @Path("username") String username, @Body String message);
+    Call<String> sendMessage(@Path("gameId") String gameId, @Path("username") String username, @Body String message);
 }

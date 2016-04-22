@@ -2,12 +2,12 @@
     <string name="app_name">Rock Paper Scissors</string>
 
     <string name="username_prompt_instructions">Please enter a username below</string>
-    <string name="username_prompt_username_prompt_hint">Username...</string>
+    <string name="username_prompt_username_prompt_hint">Username…</string>
 
     <string name="begin_game_prompt_create_game_btn">Create new game</string>
     <string name="begin_game_prompt_join_game_btn">Join existing game</string>
     <string name="begin_game_prompt_instructions">Enter a code below to join an existing game, or start your own game and invite a friend!</string>
-    <string name="begin_game_prompt_code_prompt_hint">Enter your friend\'s game code…</string>
+    <string name="begin_game_prompt_code_prompt_hint">Enter a game ID…</string>
 
     <string name="shape_rock">Rock</string>
     <string name="shape_paper">Paper</string>

@@ -15,7 +15,6 @@ import retrofit2.Response;
 public class BeginGamePromptActivity extends AppCompatActivity {
 
     private GameService gameService;
-    private Game game = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,24 +25,40 @@ public class BeginGamePromptActivity extends AppCompatActivity {
 
     public void onJoinGame(View view) {
         EditText gameCodeEditText = (EditText) findViewById(R.id.begin_game_prompt_game_code_edit_text);
-        String gameId = gameCodeEditText.getText().toString();
+        if (gameCodeEditText != null) {
+            String gameId = gameCodeEditText.getText().toString();
 
-        // TODO: join game
+            if (!gameId.isEmpty()) {
+                String username = GameSession.player.getUsername();
+                gameService.joinGame(gameId, username).enqueue(new Callback<Game>() {
+                    @Override
+                    public void onResponse(Call<Game> call, Response<Game> response) {
+                        GameSession.game = response.body();
+                        startGame();
+                    }
 
-        startGame();
+                    @Override
+                    public void onFailure(Call<Game> call, Throwable t) {
+                        Toast.makeText(BeginGamePromptActivity.this, "Failed to join game. Please try again.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            } else {
+                Toast.makeText(BeginGamePromptActivity.this, "Enter a game ID to join a game.", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     public void onCreateGame(View view) {
         gameService.createGame().enqueue(new Callback<Game>() {
             @Override
             public void onResponse(Call<Game> call, Response<Game> response) {
-                game = response.body();
-                displayGameId(game.getId());
+                GameSession.game = response.body();
+                displayGameId(GameSession.game.getId());
             }
 
             @Override
             public void onFailure(Call<Game> call, Throwable t) {
-                Toast.makeText(BeginGamePromptActivity.this, "Failed to create game. Try again.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BeginGamePromptActivity.this, "Failed to create game. Please try again.", Toast.LENGTH_SHORT).show();
             }
         });
     }
