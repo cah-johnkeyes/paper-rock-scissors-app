@@ -26,9 +26,10 @@ public class BeginGamePromptActivity extends AppCompatActivity {
 
     public void onJoinGame(View view) {
         EditText gameCodeEditText = (EditText) findViewById(R.id.begin_game_prompt_game_code_edit_text);
-        String gameCode = gameCodeEditText.getText().toString();
+        String gameId = gameCodeEditText.getText().toString();
 
-        // TODO: join game using game code
+        // TODO: join game
+
         startGame();
     }
 
@@ -55,6 +56,8 @@ public class BeginGamePromptActivity extends AppCompatActivity {
                 if (gameIdTextView != null) {
                     gameIdTextView.setText(String.valueOf(gameId));
                 }
+
+                // TODO: auto fill game id input
             }
         });
     }

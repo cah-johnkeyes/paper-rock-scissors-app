@@ -14,7 +14,6 @@ import retrofit2.Response;
 public class UsernamePromptActivity extends AppCompatActivity {
 
     private static final String USERNAME_SHARED_PREFS_KEY = "com.fuse.bootcamp.rockpaperscissors.USERNAME_SHARED_PREFS_KEY";
-    public static final String TAG = UsernamePromptActivity.class.getName();
 
     private SharedPreferences sharedPrefs;
     private GameService gameService;
@@ -33,11 +32,6 @@ public class UsernamePromptActivity extends AppCompatActivity {
         } else {
             setContentView(R.layout.activity_username_prompt);
         }
-    }
-
-    private void promptToStartOrJoinGame() {
-        Intent intent = new Intent(this, BeginGamePromptActivity.class);
-        startActivity(intent);
     }
 
     public void onSubmitUsername(View view) {
@@ -62,5 +56,10 @@ public class UsernamePromptActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void promptToStartOrJoinGame() {
+        Intent intent = new Intent(this, BeginGamePromptActivity.class);
+        startActivity(intent);
     }
 }
