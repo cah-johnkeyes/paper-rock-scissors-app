@@ -13,6 +13,9 @@ import java.io.IOException;
 
 public class GcmRegistrationService extends IntentService {
 
+    public static final String GCM_TOKEN_RECEIVED_BROADCAST_INTENT = "com.fuse.bootcamp.rockpaperscissors.GCM_TOKEN_RECEIVED_BROADCAST_RECEIVER";
+    public static final String GCM_TOKEN_EXTRAS = "com.fuse.bootcamp.rockpaperscissors.GCM_TOKEN_EXTRAS";
+
     private static final String[] TOPICS = {"GLOBAL"};
 
     public GcmRegistrationService() {
@@ -28,6 +31,10 @@ public class GcmRegistrationService extends IntentService {
         try {
             String token = getToken(this);
             subscribeTopics(this, token);
+
+            Intent gcmTokenIntent = new Intent(GCM_TOKEN_RECEIVED_BROADCAST_INTENT);
+            gcmTokenIntent.putExtra(GCM_TOKEN_EXTRAS, token);
+            sendBroadcast(gcmTokenIntent);
         } catch (IOException e) {
             e.printStackTrace();
         }
