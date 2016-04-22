@@ -22,6 +22,9 @@ public class UsernamePromptActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Intent i = new Intent(this, GcmRegistrationService.class);
+        startService(i);
+
         gameService = GameServiceProvider.get();
 
         sharedPrefs = getPreferences(MODE_PRIVATE);

@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "915849350756",
+    "project_id": "paper-rock-scissors-409b3"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915849350756:android:e6207d64be4932dc",
+        "android_client_info": {
+          "package_name": "com.fuse.bootcamp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCB2LeLA4dvgswWhfFCUICCQj1pDTtjy8w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
